@@ -7,6 +7,7 @@ import numpy as np
 import os
 from datetime import datetime
 import time
+import dotenv
 import requests
 
 app = Flask(__name__)
@@ -29,7 +30,7 @@ if not os.path.exists(save_folder):
 last_save_time = 0
 
 # LINE Notify API settings
-line_notify_token = 'Fd4h4pEAHKCXatr8JU7x7hwkDIe9wmK6pzkqH5b8Ipv'  # แทนที่ด้วย LINE Notify token ของคุณ
+line_notify_token = os.getenv('TOKEN')
 line_notify_api = 'https://notify-api.line.me/api/notify'
 
 
